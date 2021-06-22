@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile - responsive grid</title>
+</head>
+<body>
+
+
+    <div class="container">
+        <nav>navabr</nav>
+        <div class="box">box</div>
+        <div class="box">box</div>
+        
+        <div class="box">box</div>
+        <div class="box">box</div>
+        <div class="full-box">full-box</div>
+
+        <div class="box">box</div>
+        <div class="box">box</div>  
+        <div class="box">box</div>
+        <div class="box">box</div>  
+        <div class="full-box">full-box</div>
+
+        
+        <div class="sidebar">sidebar</div>
+        <footer>footer</footer>
+    </div>
+
+
+    <style>
+        /* *{box-sizing: border-box;} */
+        .container{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: repeat(8,auto);
+            border: 1px solid;
+            grid-gap: 10px;
+        }
+
+        nav{
+            background-color: red;
+            grid-column: 1/-1;
+            height: 60px;
+        }
+        .box{
+            background-color: yellow;
+            height: 100px;
+            border: 1px solid;
+        }
+        .full-box{
+            background-color: gray;
+            grid-column: 1/-1;
+            height: 200px;
+        }
+        footer{
+            background-color: green;
+            grid-column: 1/-1;
+            height: 60px;
+
+        }
+
+        .sidebar{
+            background-color: pink;
+            display: none;
+        }
+
+        @media screen and (min-width:700px ){
+            .sidebar{
+                display: inherit;
+                grid-column: 3/-1;
+                grid-row: 2/-1;
+            }
+            .container{
+                grid-template-columns: repeat(3,1fr);   
+            }
+            .full-box{
+                background-color: gray;
+                grid-column: 1/-2;
+                height: 200px;
+            }
+        }
+
+
+    </style>
+
+
+</body>
+</html>
